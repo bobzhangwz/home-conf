@@ -1,0 +1,56 @@
+!!$HOME/.Xdefaults
+!! urxvtd -q -f -o
+!! xrdb ~/.Xresources
+!! xcompmgr
+!!调整此处设置输入法
+URxvt.inputMethod:fcitx
+URxvt.preeditType:OffTheSpot
+!!颜色设置
+URxvt.depth:32
+!!中括号内数表示透明度
+URxvt.background:#222222
+URxvt.foreground:#ffffff
+URxvt.colorBD:Gray95
+URxvt.colorUL:Green
+URxvt.color1:Red2
+URxvt.color4:RoyalBlue
+URxvt.color5:Magenta2
+URxvt.color8:Gray50
+URxvt.color10:Green2
+URxvt.color12:DodgerBlue
+URxvt.color14:Cyan2
+URxvt.color15:Gray95
+!!标签设置
+URxvt.perl-ext-common: default,tabbed,matcher,clipboard
+!URxvt.tabbed.tab-fg: 12
+!URxvt.tabbed.tab-bg: 0
+!URxvt.tabbed.tabbar-fg: 4
+Rxvt.menu:/etc/X11/rxvt.menu
+!!复制黏贴
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysym.Control-V: perl:clipboard:paste
+URxvt.iso14755: False
+!!URL操作
+URxvt.urlLauncher:firefox
+URxvt.matcher.button:1
+
+!!滚动条设置
+URxvt.scrollBar:True
+URxvt.scrollBar_right:True
+URxvt.scrollBar_floating:False
+URxvt.scrollstyle:plain
+!!滚屏设置
+URxvt.mouseWheelScrollPage:True
+URxvt.scrollTtyOutput:False
+URxvt.scrollWithBuffer:True
+URxvt.scrollTtyKeypress:True
+!!光标闪烁
+URxvt.cursorBlink:True
+URxvt.saveLines:3000
+!!边框
+URxvt.borderLess:False
+!!字体设置
+Xft.dpi:96
+URxvt.font:xft:monofur:size=11:style=Regular:antialias=true,xft:monofur:size=10:style=Regular:antialias=true
+URxvt.boldfont:xft:monofur:size=11:style=BOld:antialias=true,xft:monofur:size=10:style=Bold:antialias=true
+URxvt.termName: rxvt-256color

@@ -1,0 +1,4 @@
+pkill nm-applet
+systemctl stop NetworkManager
+systemctl start netctl-auto@wlp3s0.service
+wifi-menu 

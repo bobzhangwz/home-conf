@@ -1,0 +1,3 @@
+systemctl stop netctl-auto@wlp3s0.service
+systemctl start NetworkManager
+sleep 3 & nm-applet
