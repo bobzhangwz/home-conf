@@ -158,7 +158,7 @@ myXmobarPP = defaultPP {
   }
 
 myFadeHook = composeAll [isUnfocused --> transparency 0.5
-                        ,                transparency 0.18
+                        ,                transparency 0.1
                         ]
 
 manageHook' :: ManageHook
@@ -279,7 +279,7 @@ myKeys =
     ++
     [
       ("M-S-q", io (exitWith ExitSuccess))
-      -- ("M-S-q", spawn "gnome-session-quit") 
+      -- ("M-S-q", spawn "gnome-session-quit")
       -- ("M-S-q", namedScratchpadAction scratchpads "reboot")
     , ("M-q", namedScratchpadAction scratchpads "shutdown")
     , ("M-S-r", spawn "ghc -e ':m +XMonad Control.Monad System.Exit' -e 'flip unless exitFailure =<< recompile False' && xmonad --restart")

@@ -10,12 +10,14 @@ ZSH_THEME="wedisagree"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="ls -F --color=auto"
+alias vi="vim"
 alias ll='ls -al'
 alias em="emacsclient -t"
 alias emc="emacsclient -c"
 alias grep='grep --color=auto'
 alias tmux="tmux attach"
 alias tm="tmuxifier load-session"
+alias unzip='unzip -O CP936'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -43,7 +45,7 @@ DISABLE_AUTO_UPDATE="true"
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment following line if you want to  shown in the command execution time stamp 
+# Uncomment following line if you want to  shown in the command execution time stamp
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
 # HIST_STAMPS="mm/dd/yyyy"
