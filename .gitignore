@@ -65,3 +65,23 @@ test
 /vpn
 /workspace
 /VirtualBox VMs
+/.eclipse
+/.autorandr
+/.eclipse
+/.fonts.conf
+/.gimp-2.8
+/.gtk-bookmarks
+/.lastpass
+/.mplayer
+/.mysql_history
+/.npm
+/.purple
+/.slime-history.eld
+/.swankjsrc
+/.thumbnails
+/.xarchive
+/Documents
+/backup.log
+/photorec.ses
+/testdisk.log
+/tmp

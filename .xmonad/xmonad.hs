@@ -115,7 +115,7 @@ main = do
   xmonad =<< statusBar cmd myXmobarPP toggleStrutsKey config
   where
     -- cmd = "bash -c \"tee >(xmobar -x0) | xmobar -x1\""
-    cmd = "xmobar ~/.xmonad/xmobar.hs -x1"
+    cmd = "xmobar ~/.xmonad/xmobar.hs -x0"
     toggleStrutsKey :: XConfig t -> (KeyMask, KeySym)
     toggleStrutsKey XConfig{modMask = modm} = (modm, xK_b )
     config = ewmh $ withNavigation2DConfig myNavigation2DConfig $
@@ -131,7 +131,7 @@ main = do
                , manageHook         = manageHook'
                } `additionalKeysP` myKeys
 
-myGSConfig = ["xrandr --output VGA1 --primary", "xmodmap ~/.Xmodmap"
+myGSConfig = ["xrandr --output VGA1 --primary", "disper -e -r 1366x768,1280x960 -t top"
               , "urxvtd -q -f -o", "emacsclient -c", "emacs -daemon"
               , "xrandr --output LVDS1 --off", "google-chrome-stable --incognito"]
 
@@ -157,7 +157,7 @@ myXmobarPP = defaultPP {
   , ppSort   = fmap (namedScratchpadFilterOutWorkspace.) (ppSort byorgeyPP)
   }
 
-myFadeHook = composeAll [isUnfocused --> transparency 0.5
+myFadeHook = composeAll [isUnfocused --> transparency 0.1
                         ,                transparency 0.1
                         ]
 
@@ -202,7 +202,7 @@ manageHook' = composeAll . concat $
       myNFloats   = ["bashrun","Google Chrome Options","Chromium Options"
                     , "Hangouts", "stardict", "StarDict"
                     , "System Settings", "Library", "Firefox Preference"]
-      myDoc = []
+      myDoc = ["VirtualBox"]
       mySinks = ["gimp"]
       -- Ignore gnome leftovers
       myIgnores = ["Unity-2d-panel", "Unity-2d-launcher", "desktop_window", "kdesktop",
@@ -432,10 +432,11 @@ myTopics :: [TopicItem]
 myTopics =
     [ TI "web" "" (return ())
     , TI "code" "" (urxvt "emacsclient '-nw'")
+    -- , TI "code" "" (return ())
     , TI "code2" "" (return ())
     , TI "assets" "" (spawn "urxvt")
-    , TI "chat" "" (return ())
     , TI "doc" "Documents/" (return ())
+    , TI "chat" "" (return ())
     , TI "gimp" "" (return ())
     , TI "media" "" (return ())
     , TI "dict" "" (return ())
@@ -523,11 +524,11 @@ scratchpads =
   , NS "reboot" "urxvtc -T reboot -e sh -c \"sudo reboot\"" (title =? "reboot") doTopFloat
   , NS "getmail" "urxvtc -T getmail -e getmail -r rc0 -r rc1" (title =? "getmail") doTopRightFloat
 
-  , NS "g-dict" "google-chrome --app=http://dict.cn/" (title =? "google-dict") doTopRightFloat
-  , NS "g-calendar" "google-chrome --app=https://www.google.com/calendar/render" (title =? "google-calendar") doTopRightFloat
-  , NS "g-keep" "google-chrome --app=https://drive.google.com/keep/" (title =? "google-keep") doTopRightFloat
-  , NS "g-mail" "google-chrome --app=https://mail.google.com/" (title =? "google-mail") doTopRightFloat
-  , NS "g-task" "google-chrome --app=https://issues.schoolshape.com/projects/schoolshape/issues" (title =? "g-task") doTopRightFloat
+  , NS "g-dict" "google-chrome-stable --app=http://dict.cn/" (title =? "google-dict") doTopRightFloat
+  , NS "g-calendar" "google-chrome-stable --app=https://www.google.com/calendar/render" (title =? "google-calendar") doTopRightFloat
+  , NS "g-keep" "google-chrome-stable --app=https://drive.google.com/keep/" (title =? "google-keep") doTopRightFloat
+  , NS "g-mail" "google-chrome-stable --app=https://mail.google.com/" (title =? "google-mail") doTopRightFloat
+  , NS "g-task" "google-chrome-stable --app=https://issues.schoolshape.com/projects/schoolshape/issues" (title =? "g-task") doTopRightFloat
 
   ]
   where

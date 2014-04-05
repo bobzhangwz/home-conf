@@ -51,6 +51,8 @@ URxvt.saveLines:3000
 URxvt.borderLess:False
 !!字体设置
 Xft.dpi:96
-URxvt.font:xft:monofur:size=11:style=Regular:antialias=true,xft:monofur:size=10:style=Regular:antialias=true
-URxvt.boldfont:xft:monofur:size=11:style=BOld:antialias=true,xft:monofur:size=10:style=Bold:antialias=true
+! URxvt.font:xft:monofur:size=11:style=Regular:antialias=true,xft: WenQuanYi Micro Hei Mono:size=14:style=Regular:antialias=true
+! URxvt.boldfont:xft:monofur:size=11:style=bold:antialias=true,xft:WenQuanYi Micro Hei Mono:size=14:style=Bold:antialias=true
+URxvt.font:xft:monofur:size=11:style=Regular:antialias=true,xft: WenQuanYi Bitmap Song:size=11:style=Regular:antialias=true
+URxvt.boldfont:xft:monofur:size=11:style=bold:antialias=true,xft:WenQuanYi Bitmap Song:size=11:style=Bold:antialias=true
 URxvt.termName: rxvt-256color

@@ -8,6 +8,8 @@ bash $HOME/.xmonad/wallpaper.sh &
 
 eval `cat ~/.fehbg` &
 
+disper -e -r 1366x768,1280x960 -t top
+
 sproc () {
     if pgrep -u poe $1 &> /dev/null;
     then
@@ -21,12 +23,14 @@ sproc () {
 # xrandr --output VGA1 --primary --right-of LVDS1 --mode 1680x1050 --output LVDS1 --mode 1366x768 &
 # sproc 'xcompmgr' 'xcompmgr -c'
 sproc 'fcitx' 'fcitx'
+sproc 'udiskie' 'udiskie --tray'
 sproc 'firefox' 'firefox'
 sproc 'synapse' 'synapse'
 #sproc 'parcellite' 'parcellite'
 sproc 'nm-applet' '/usr/bin/nm-applet --sm-disable'
 sproc 'emacs' 'emacs -daemon'
 # sproc 'pidgin'  'pidgin'
+sproc 'virtualbox' 'virtualbox'
 sproc 'urxvtd' 'urxvtd -q -f -o'
 #sproc 'conky' 'conky -c /home/p3oe/.conkycolors/conkyrc'
-sproc trayer 'trayer --edge top --align right --SetDockType true --SetPartialStrut false --expand true --widthtype request --transparent true --tint 0x191234 --height 19'
+sproc 'trayer' 'trayer --edge top --align right --SetDockType true --SetPartialStrut false --expand true --widthtype request --transparent true --tint 0x191234 --height 19 --monitor primary'
