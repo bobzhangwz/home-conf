@@ -305,6 +305,9 @@ myKeys =
     , ("M-S--", spawn "amixer sset Master 1-")
     , ("M-S-=", spawn "amixer sset Master 1+")
 
+    , ("M-<F1>", spawn "ksnapshot --region")  --抓部分
+    , ("M-<F12>", spawn "ksnapshot -c")  --抓全屏
+
     , ("<XF86AudioMute>", spawn "amixer set Master mute")
     -- , ("<XF86AudioPlay>", spawn "mpc toggle")
     , ("<XF86Eject>", spawn "eject")

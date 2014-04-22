@@ -85,3 +85,5 @@ test
 /photorec.ses
 /testdisk.log
 /tmp
+/.subversion
+/public_html
