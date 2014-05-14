@@ -2,6 +2,7 @@
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
+# dbus-launch pcmanfm
 pcmanfm -d &
 
 bash $HOME/.xmonad/wallpaper.sh &

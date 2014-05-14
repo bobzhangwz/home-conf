@@ -102,7 +102,7 @@ colorBlue           = "#66D9EF"
 colorYellow         = "#E6DB74"
 colorWhite          = "#CCCCC6"
 colorNormalBorder   = "#CCCCCp6"
-colorFocusedBorder  = colorPink
+colorFocusedBorder  = "#FF0000"
 barFont  = "terminus"
 barXFont = "inconsolata:size=12"
 xftFont = "xft: inconsolata-14"
@@ -193,7 +193,7 @@ manageHook' = composeAll . concat $
       -- This is used for gimp windwos to force them into a layout.
       doSink = ask >>= \w -> liftX (reveal w) >> doF (W.sink w)
       -- Float dialogs, Download windows and Save dialogs
-      myCFloats = ["Sysinfo", "XMessage", "Smplayer","MPlayer", "nemo", "Toplevel", "pcmanfm"
+      myCFloats = ["Sysinfo", "XMessage", "Smplayer","MPlayer", "nemo", "Toplevel", "Pcmanfm"
                   , "Xmessage","XFontSel","Downloads","Nm-connection-editor", "Pidgin", "stardict", "StarDict"]
 
       myTFloats = ["Downloads", "Save As..."]
@@ -215,7 +215,8 @@ manageHook' = composeAll . concat $
               , "opera", "Opera", "Chromium"]
       myChat = ["Pidgin Internet Messenger", "Buddy List"
                , "skype", "skype-wrapper", "Skype", "Conky"]
-      myCode = ["geany", "Emacs24", "Gvim", "emacs", "emacsclient"]
+      -- myCode = ["geany", "Emacs24", "Gvim", "emacs", "emacsclient"]
+      myCode = ["geany", "Gvim", "emacs"]
       myCode2 = ["gnome-terminal", "eclipse", "Eclipse", "jetbrains-idea-ce", "jetbrains-idea"]
       myGimp = ["Gimp", "GIMP Image Editor"]
       myMedia = ["Rhythmbox","Spotify","Boxee","Trine"]
@@ -244,7 +245,7 @@ layoutHook' = onWorkspaces ["gimp"] gimpLayout $
                    ||| simpleFloat
                    ||| dragPane Horizontal 0.1 0.3
                    ||| ResizableTall 1 (3/100) (1/2) []
-                   ||| autoMaster 1 (1/20) (Mag.magnifier Grid)
+                   -- ||| autoMaster 1 (1/20) (Mag.magnifier Grid)
                    ||| HintedGrid.GridRatio (4/3) False
 
     gimpLayout = avoidStruts $ withIM (0.11) (Role "gimp-toolbox") $
@@ -291,10 +292,12 @@ myKeys =
     , ("M-<Return>", windows W.swapMaster)
     , ("M-S-<Return>", spawn "urxvtc")
     , ("C-; o o", spawnSelected defaultGSConfig myGSConfig)
+    , ("C-; o f", spawn "pcmanfm")
     , ("C-; o k", kill)
     , ("C-; o i", spawn "xcalib -i -a")
     , ("C-; o l", spawn "xscreensaver-command -lock")
     , ("C-; o d", spawn "xkill")
+    , ("C-; o q", spawn "systemctl suspend")
     -- , ("<XF86AudioNext>", spawn "mpc_seek forward")
     -- , ("<XF86AudioPrev>", spawn "mpc_seek backward")
     , ("<XF86AudioRaiseVolume>", spawn "amixer sset Master 9+")
@@ -434,7 +437,7 @@ myTopicConfig = TopicConfig
 myTopics :: [TopicItem]
 myTopics =
     [ TI "web" "" (return ())
-    , TI "code" "" (urxvt "emacsclient '-nw'")
+    , TI "code" "" (spawn "emacsclient -c")
     -- , TI "code" "" (return ())
     , TI "code2" "" (return ())
     , TI "assets" "" (spawn "urxvt")
@@ -442,7 +445,7 @@ myTopics =
     , TI "chat" "" (return ())
     , TI "gimp" "" (return ())
     , TI "media" "" (return ())
-    , TI "dict" "" (return ())
+    , TI "dust" "" (return ())
     ]
   where
     urxvt prog = spawn . ("urxvtc -T "++) . ((++) . head $ words prog) . (" -e "++) . (prog++) $ ""
@@ -520,7 +523,7 @@ scratchpads =
   [ NS "utop" "urxvtc -T utop -e rlwrap utop" (title =? "utop") doTopRightFloat
   , NS "task" "urxvtc -T task -e rlwrap task shell" (title =? "task") doTopRightFloat
   , NS "stardict" "stardict" (title =? "stardict") doTopRightFloat
-  , NS "emacs" "urxvtc -T emacs -e emacsclient '-nw'" (title =? "emacs") doTopRightFloat
+  , NS "emacs" "urxvtc -T emacsnw -e emacsclient '-nw'" (title =? "emacsnw") doTopRightFloat
   , NS "agenda" "org-agenda" (title =? "Agenda Frame") orgFloat
   , NS "capture" "org-capture" (title =? "Capture Frame") orgFloat
   , NS "shutdown" "urxvtc -T shutdown -e sh -c \"sudo shutdown -h 0\"" (title =? "shutdown") doTopFloat

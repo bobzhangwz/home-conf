@@ -56,3 +56,4 @@ Xft.dpi:96
 URxvt.font:xft:monofur:size=11:style=Regular:antialias=true,xft: WenQuanYi Bitmap Song:size=11:style=Regular:antialias=true
 URxvt.boldfont:xft:monofur:size=11:style=bold:antialias=true,xft:WenQuanYi Bitmap Song:size=11:style=Bold:antialias=true
 URxvt.termName: rxvt-256color
+! URxvt.termName: xterm-256color

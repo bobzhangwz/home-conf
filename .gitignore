@@ -87,3 +87,9 @@ test
 /tmp
 /.subversion
 /public_html
+/.pip/
+/.swt/
+/.vim_mru_files
+/Desktop/
+/.vimrecent
+/.eclimrc
