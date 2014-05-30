@@ -21,10 +21,11 @@ URxvt.color12:DodgerBlue
 URxvt.color14:Cyan2
 URxvt.color15:Gray95
 !!标签设置
-URxvt.perl-ext-common: default,tabbed,matcher,clipboard
-!URxvt.tabbed.tab-fg: 12
-!URxvt.tabbed.tab-bg: 0
-!URxvt.tabbed.tabbar-fg: 4
+! URxvt.perl-ext-common: default,tabbed,matcher,clipboard
+URxvt.perl-ext-common: default,matcher,clipboard
+URxvt.tabbed.tab-fg: 12
+URxvt.tabbed.tab-bg: 0
+URxvt.tabbed.tabbar-fg: 4
 Rxvt.menu:/etc/X11/rxvt.menu
 !!复制黏贴
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
@@ -57,3 +58,7 @@ URxvt.font:xft:monofur:size=11:style=Regular:antialias=true,xft: WenQuanYi Bitma
 URxvt.boldfont:xft:monofur:size=11:style=bold:antialias=true,xft:WenQuanYi Bitmap Song:size=11:style=Bold:antialias=true
 URxvt.termName: rxvt-256color
 ! URxvt.termName: xterm-256color
+
+
+URxvt*altSendsEscape: true
+

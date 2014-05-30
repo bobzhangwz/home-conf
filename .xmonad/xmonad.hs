@@ -193,8 +193,12 @@ manageHook' = composeAll . concat $
       -- This is used for gimp windwos to force them into a layout.
       doSink = ask >>= \w -> liftX (reveal w) >> doF (W.sink w)
       -- Float dialogs, Download windows and Save dialogs
-      myCFloats = ["Sysinfo", "XMessage", "Smplayer","MPlayer", "nemo", "Toplevel", "Pcmanfm"
-                  , "Xmessage","XFontSel","Downloads","Nm-connection-editor", "Pidgin", "stardict", "StarDict"]
+      myCFloats = ["Sysinfo", "XMessage", "Smplayer"
+                  ,"MPlayer", "nemo"
+                  , "Toplevel", "Pcmanfm", "goldendict"
+                  , "Xmessage","XFontSel","Downloads"
+                  ,"Nm-connection-editor", "Pidgin"
+                  , "stardict", "StarDict"]
 
       myTFloats = ["Downloads", "Save As..."]
       myRFloats = ["Dialog"]
@@ -292,11 +296,12 @@ myKeys =
     , ("M-<Return>", windows W.swapMaster)
     , ("M-S-<Return>", spawn "urxvtc")
     , ("C-; o o", spawnSelected defaultGSConfig myGSConfig)
-    , ("C-; o f", spawn "pcmanfm")
+    , ("C-; o d", spawn "pcmanfm")
+    , ("C-; o f", placeFocused $ withGaps (22, 0, 0, 0) $ smart (0.5,0.5))
     , ("C-; o k", kill)
     , ("C-; o i", spawn "xcalib -i -a")
     , ("C-; o l", spawn "xscreensaver-command -lock")
-    , ("C-; o d", spawn "xkill")
+    -- , ("C-; o d", spawn "xkill")
     , ("C-; o q", spawn "systemctl suspend")
     -- , ("<XF86AudioNext>", spawn "mpc_seek forward")
     -- , ("<XF86AudioPrev>", spawn "mpc_seek backward")
@@ -316,7 +321,6 @@ myKeys =
     , ("<XF86Eject>", spawn "eject")
     , ("M-S-a", sendMessage Taller)
     , ("M-S-z", sendMessage Wider)
-    , ("C-; o f", placeFocused $ withGaps (22, 0, 0, 0) $ smart (0.5,0.5))
 
     -- window management
     , ("M-s", withFocused $ windows . W.sink)
@@ -437,10 +441,10 @@ myTopicConfig = TopicConfig
 myTopics :: [TopicItem]
 myTopics =
     [ TI "web" "" (return ())
-    , TI "code" "" (spawn "emacsclient -c")
+    , TI "code" "" (urxvt "/home/poe/.gem/ruby/2.1.0/bin/tmuxinator s workspace")
     -- , TI "code" "" (return ())
     , TI "code2" "" (return ())
-    , TI "assets" "" (spawn "urxvt")
+    , TI "assets" "" (urxvt "tmux")
     , TI "doc" "Documents/" (return ())
     , TI "chat" "" (return ())
     , TI "gimp" "" (return ())

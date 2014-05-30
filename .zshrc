@@ -15,8 +15,7 @@ alias ll='ls -al'
 alias em="emacsclient -t"
 alias emc="emacsclient -c"
 alias grep='grep --color=auto'
-alias tmux="tmux attach"
-alias tm="tmuxifier load-session"
+alias tm="tmux attach"
 alias unzip='unzip -O CP936'
 
 # Set to this to use case-sensitive completion
@@ -56,13 +55,13 @@ DISABLE_AUTO_UPDATE="true"
 # plugins=(git)
 
 plugins=(git ant coffee colored-man gem ruby \
-     mvn scala sbt tmux )
+     mvn scala sbt tmux tmuxinator)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export EDITOR='emacsclient -t'
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.1.0/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions

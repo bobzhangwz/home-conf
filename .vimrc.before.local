@@ -1,0 +1,6 @@
+let g:spf13_bundle_groups=['general', 'writing', 'scala', 'programming', 'youcompleteme','php', 'ruby', 'python', 'twig', 'javascript', 'html', 'misc',]
+" let g:spf13_bundle_groups=['general', 'writing', 'scala', 'programming', 'neocomplcache' ,'php', 'ruby', 'python', 'twig', 'javascript', 'html', 'misc',]
+
+let g:spf13_no_autochdir = 1
+let g:spf13_no_big_font = 1
+" let g:airline_powerline_fonts=1
