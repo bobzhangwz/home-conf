@@ -16,7 +16,7 @@ alias em="emacsclient -t"
 alias emc="emacsclient -c"
 alias grep='grep --color=auto'
 alias tm="tmux attach"
-alias unzip='unzip -O CP936'
+# alias unzip='unzip -O CP936'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"

@@ -100,3 +100,8 @@ test
 /.goldendict/
 /.gem/
 /.cmus/
+/fidentify.log
+/myshell/hosts.bak
+/.#.todo
+/.viminfo.tmp
+/myshell/smarthost.py
