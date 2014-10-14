@@ -151,14 +151,14 @@ myXmobarPP = defaultPP {
                . flip (subRegex (mkRegex "ReflectX")) "[|]"
                . flip (subRegex (mkRegex "ReflectY")) "[-]"
                . flip (subRegex (mkRegex "Mirror")) "[+]"
-  , ppTitle = xmobarColor "#C9A34E" "" . shorten 24
+  , ppTitle = xmobarColor "#C9A34E" "" . shorten 32
   , ppSep = xmobarColor "#429942" "" " | "
   -- , ppOrder  = \(ws:l:t:exs) -> []++exs
   , ppSort   = fmap (namedScratchpadFilterOutWorkspace.) (ppSort byorgeyPP)
   }
 
-myFadeHook = composeAll [isUnfocused --> transparency 0.1
-                        ,                transparency 0.1
+myFadeHook = composeAll [isUnfocused --> transparency 0.0
+                        ,                transparency 0.0
                         ]
 
 manageHook' :: ManageHook
@@ -221,7 +221,7 @@ manageHook' = composeAll . concat $
                , "skype", "skype-wrapper", "Skype", "Conky"]
       -- myCode = ["geany", "Emacs24", "Gvim", "emacs", "emacsclient"]
       myCode = ["geany", "Gvim", "emacs"]
-      myCode2 = ["gnome-terminal", "eclipse", "Eclipse", "jetbrains-idea-ce", "jetbrains-idea"]
+      myCode2 = ["gnome-terminal", "eclipse", "Eclipse", "jetbrains-idea-ce", "jetbrains-idea", "Aptana Studio 3"]
       myGimp = ["Gimp", "GIMP Image Editor"]
       myMedia = ["Rhythmbox","Spotify","Boxee","Trine"]
 

@@ -1,4 +1,6 @@
-Config {font = "xft:monofur-11"
+Config {
+      -- font = "xft:monofur-11"
+         font = "xft:WenQuanYi Zen Hei-11"
        , bgColor = "#343434"
        , fgColor = "#C9A34E"
        , border = NoBorder
@@ -8,10 +10,10 @@ Config {font = "xft:monofur-11"
        -- , hideOnStart = False
        -- , persistent = True
        , commands = [ Run Network "wlp3s0" ["-L", "8", "-H", "32", "-l", "#C9A34E", "-n", "#429942" ,"-h", "#A36666", "-t", "net: <rx> : <tx>"] 10
-                    , Run Cpu ["-L","3","-H","50","--normal","#429942","--high","#A36666", "-t U: <total>%"] 10
-                    , Run Memory ["-t","M: <usedratio>%"] 10
-                    , Run Date "%a %b %_d %H:%M:%S" "date" 10
-                    , Run CoreTemp ["-t", "T: <core0>C"] 10
+                    , Run MultiCpu ["-L","3","-H","50","--normal","#429942","--high","#A36666", "-t U: <autototal>%"] 16
+                    , Run Memory ["-t","M: <usedratio>%"] 18
+                    , Run Date "%a %j %m-%d %H:%M:%S" "date" 10
+                    , Run CoreTemp ["-t", "T: <core0>~<core1>C"] 10
                     , Run BatteryP ["BAT0"] ["-t", "<acstatus><watts> (<left>%)",
                                              "-L", "10", "-H", "80", "-p", "3",
                                              "--", "-O", "<fc=green>On</fc> - ",
@@ -21,5 +23,5 @@ Config {font = "xft:monofur-11"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{ %coretemp% <fc=#429942>|</fc> %cpu% <fc=#429942>|</fc> %memory% <fc=#429942>|</fc> %wlp3s0% <fc=#429942>|</fc> %battery% <fc=#429942>|</fc> %date%                 "
+       , template = " %StdinReader% }{ %coretemp% <fc=#429942>|</fc> %multicpu% <fc=#429942>|</fc> %memory% <fc=#429942>|</fc> %wlp3s0% <fc=#429942>|</fc> %battery% <fc=#429942>|</fc> %date%                 "
        }

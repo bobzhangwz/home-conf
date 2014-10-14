@@ -1,7 +1,11 @@
-keysym Menu = Super_L
 remove Lock = Caps_Lock
 remove Control = Control_R
-keysym Control_R = Caps_Lock
+remove Control = Control_L
+
+keysym Control_R = Control_L
 keysym Caps_Lock = Control_R
+
 add Lock = Caps_Lock
 add Control = Control_R
+add Control = Control_L
+add Lock = Menu

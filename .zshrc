@@ -59,9 +59,11 @@ plugins=(git ant coffee colored-man gem ruby \
 
 source $ZSH/oh-my-zsh.sh
 
+ANDROID_HOME=/home/sw/android-sdk-linux
+
 # User configuration
 export EDITOR='emacsclient -t'
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.1.0/bin:$PATH
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.1.0/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions

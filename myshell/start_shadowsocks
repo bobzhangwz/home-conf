@@ -1,0 +1,3 @@
+ systemctl restart shadowsocks@poecfw.service
+
+ systemctl status shadowsocks@poecfw.service

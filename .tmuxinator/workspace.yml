@@ -1,7 +1,7 @@
 # ~/.tmuxinator/workspace.yml
 
 name: workspace
-root: ~/workspace/hexo_blog
+root: ~/workspace/
 
 # Optional tmux socket
 # socket_name: foo
@@ -23,11 +23,17 @@ windows:
       layout: main-vertical
       panes:
         - emacsclient -t
+        - zsh
+        - vifm
   - shell:
       layout: main-horizontal
       panes:
-        - zsh
-        - vifm
-  - vim: vi
+        - cd ~/workspace/
+  - server:
+      layout: tiled
+      panes:
+        - cd ~/workspace/hexo_blog/ && hexo s
+        - cd ~/workspace/hexo_note/ && hexo s
+        - cd ~/workspace/hexo_blog/
+        - cd ~/workspace/hexo_note/
   - music: cmus
-  - server: hexo s
