@@ -1,0 +1,7 @@
+# !/bin/bash
+
+systemctl start shadowsocks@poecfw.service
+systemctl start redsocks
+systemctl start iptables
+iptables-restore /etc/iptables/redsocks.rules
+

@@ -123,3 +123,5 @@ test
 /.zcompdump-arch-5.0.6
 /bin/
 /oradiag_poe/
+/.emacs.prelude/
+/.zcompdump-arch-5.0.7
