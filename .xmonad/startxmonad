@@ -9,7 +9,7 @@ bash $HOME/.xmonad/wallpaper.sh &
 
 eval `cat ~/.fehbg` &
 
-disper -e -r 1366x768,1280x960 -t top
+disper -e -r 1366x768,1920x1080 -t right
 
 sproc () {
     if pgrep -u poe $1 &> /dev/null;
@@ -20,13 +20,13 @@ sproc () {
     fi
 };
 
-#xrandr --output VGA1 --primary --mode 1680x1050 --output LVDS1 --off
+# xrandr --output VGA1 --primary --mode 1680x1050 --output LVDS1 --off
 # xrandr --output VGA1 --primary --right-of LVDS1 --mode 1680x1050 --output LVDS1 --mode 1366x768 &
 # sproc 'xcompmgr' 'xcompmgr -c'
 sproc 'fcitx' 'fcitx'
 sproc 'udiskie' 'udiskie --tray'
-# sproc 'firefox' 'firefox'
-sproc 'google-chrome-stable' 'google-chrome-stable'
+sproc 'firefox' 'firefox'
+# sproc 'google-chrome-stable' 'google-chrome-stable'
 sproc 'synapse' 'synapse'
 #sproc 'parcellite' 'parcellite'
 sproc 'nm-applet' '/usr/bin/nm-applet --sm-disable'

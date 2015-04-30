@@ -24,7 +24,7 @@ windows:
       panes:
         - emacsclient -t
         - zsh
-        - vifm
+        - cd ~/
   - shell:
       layout: main-horizontal
       panes:
@@ -33,7 +33,4 @@ windows:
       layout: tiled
       panes:
         - cd ~/workspace/hexo_blog/ && hexo s
-        - cd ~/workspace/hexo_note/ && hexo s
         - cd ~/workspace/hexo_blog/
-        - cd ~/workspace/hexo_note/
-  - music: cmus

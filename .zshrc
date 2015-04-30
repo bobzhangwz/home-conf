@@ -16,6 +16,8 @@ alias em="emacsclient -t"
 alias emc="emacsclient -c"
 alias grep='grep --color=auto'
 alias tm="tmux attach"
+alias bower='noglob bower'
+
 # alias unzip='unzip -O CP936'
 
 # Set to this to use case-sensitive completion
@@ -63,7 +65,7 @@ ANDROID_HOME=/home/sw/android-sdk-linux
 
 # User configuration
 export EDITOR='emacsclient -t'
-export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.1.0/bin:$PATH
+export PATH=$HOME/myshell:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.2.0/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -81,3 +83,8 @@ export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/bin:/usr/loca
 
 #export TERM=xterm-256color
 export TERM=rxvt-256color
+
+alias cnpm="npm --registry=https://registry.npm.taobao.org \
+--cache=$HOME/.npm/.cache/cnpm \
+--disturl=https://npm.taobao.org/dist \
+--userconfig=$HOME/.cnpmrc"

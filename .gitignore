@@ -125,3 +125,5 @@ test
 /oradiag_poe/
 /.emacs.prelude/
 /.zcompdump-arch-5.0.7
+/.gemrc
+/.gnome/

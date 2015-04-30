@@ -1,0 +1,5 @@
+# !/bin/bash
+
+# systemctl stop shadowsocks@poecfw.service
+systemctl stop redsocks
+systemctl stop iptables
